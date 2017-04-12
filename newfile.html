@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<title>ADMIN PAGE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+}
+.bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url("/w3images/coffeehouse.jpg");
+    min-height: 75%;
+}
+.menu {
+    display: none;
+}
+</style>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#Advertisement" class="w3-button w3-block w3-black">ADVERTISEMENTS</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#customers" class="w3-button w3-block w3-black">CUSTOMERS</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#requests" class="w3-button w3-block w3-black">REQUESTS</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    
+
+  
+  
+    <img src="pune.jpg" style="width:100%">
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- About Container -->
+<div class="w3-light-blue" id="Advertisement">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+      <h1 class="w3-wide w3-center">    Advertisements</h1>
+     
+
+      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+        <div class="w3-third w3-margin-bottom">
+          <img src="8.jpg" alt="" style="width:100%" class="w3-hover-opacity">
+         
+        </div>
+        <div class="w3-third w3-margin-bottom">
+         
+          <div class="w3-container w3-light-blue">
+            
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('addModal').style.display='block'">Add Event</button>
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          
+           <div class="w3-container w3-light-blue">
+            
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('detailtModal').style.display='block'">Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Advertisement Modal -->
+  <div id="addModal" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('addModal').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Add ADVERISEMENTS</h2>
+      </header>
+      <div class="w3-container">
+        <p><label><i class="fa fa-shopping-cart"></i>Title</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="write title here">
+        <p><label><i class="fa fa-user"></i> Name of organiser</label></p>
+        <input class="w3-input w3-border" type="text" placeholder=" Name">
+                                <p><label><i class="fa fa-user"></i> Date of post</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="date">
+                                <p><label><i class="fa fa-user"></i>Contact No</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="Contact">
+                                <p><label><i class="fa fa-user"></i> Description</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="Descibe here">
+        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">ADD <i class="fa fa-check"></i></button>
+        <button class="w3-button w3-red w3-section" onclick="document.getElementById('addModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+        
+      </div>
+    </div>
+  </div>
+
+  <!--add details -->
+   <div id="detailtModal" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-8">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('detailtModal').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Details</h2>
+      </header>
+      <div class="w3-container">
+      <table style="width: 100%;border-collapse: collapse; ">
+
+                <tr style="background: #333;color: white;font-weight: bold;">
+
+                        <td>Title</td>
+
+                        <td>Name of Organiser</td>                   
+
+                        <td>Date of Post</td>
+
+                        <td>Contact No.</td>
+
+                        <td>Description</td>
+                                                                                                
+                                                                                                
+
+                        <td style="text-align:center;">Delete</td>
+                                                                                                
+
+                </tr>
+
+                <c:forEach items="${recruiter}" var="rec">
+
+<form method="post" action="DeleteRecruiter">
+
+                <tr>
+
+                        <td></td>
+
+                        <td></td>
+
+                        <td></td>
+
+                        <td> </td>
+
+                        <td></td>
+
+                        <td style="text-align:center;"><button><span class="table-remove glyphicon glyphicon-remove" style="color: #700;cursor: pointer"></span></button></td>
+
+                </tr>
+
+                </form>
+
+                </c:forEach>
+
+        </table>
+
+
+    </div>
+    </div>
+  </div>
+  
+  
+  <!-- The event Section -->
+  <div class="w3-black" id="Events">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:1200px">
+      <h2 class="w3-wide w3-center">Add Events</h2>
+     
+
+      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+        <div class="w3-third w3-margin-bottom">
+          <img src="events.png" alt="New York" style="width:100%" class="w3-hover-opacity">
+         
+        </div>
+        <div class="w3-third w3-margin-bottom">
+         
+          <div class="w3-container w3-black">
+            
+            <button class="w3-button w3-red w3-margin-bottom" onclick="document.getElementById('eventModal').style.display='block'">Add Event</button>
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          
+           <div class="w3-container w3-black">
+            
+            <button class="w3-button w3-red w3-margin-bottom" onclick="document.getElementById('EdetailtModal').style.display='block'">Details</button>
+          </div>
+        </div>
+     </div>
+    </div>
+  </div>
+
+  
+  <!-- Event Modal -->
+  <div class="w3-light-blue" id="customers">
+  <div id="eventModal" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('eventModal').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Add Events</h2>
+      </header>
+      <div class="w3-container">
+        <p><label><i class="fa fa-shopping-cart"></i>Title</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="Name of event">
+        <p><label><i class="fa fa-user"></i> Venue</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="Place Name">
+                                <p><label><i class="fa fa-user"></i> Start Date</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="">
+                                <p><label><i class="fa fa-user"></i>End date</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="">
+                                <p><label><i class="fa fa-user"></i> Price Per Stall</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="Price">
+        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">ADD <i class="fa fa-check"></i></button>
+        <button class="w3-button w3-red w3-section" onclick="document.getElementById('eventModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <!--event details -->
+   <div id="EdetailtModal" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-8">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('EdetailtModal').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Details</h2>
+      </header>
+      <div class="w3-container">
+      <table style="width: 100%;border-collapse: collapse; ">
+
+                <tr style="background: #333;color: white;font-weight: bold;">
+
+                        <td>Title</td>
+
+                        <td>Venue</td>                   
+
+                        <td>Start Date</td>
+
+                        <td>End date</td>
+
+                        <td>Price Per Stall</td>
+                                                                                                
+                                                                                                
+
+                        <td style="text-align:center;">Delete</td>
+                                                                                                
+
+                </tr>
+
+                <c:forEach items="${recruiter}" var="rec">
+
+<form method="post" action="DeleteRecruiter">
+
+                <tr>
+
+                        <td></td>
+
+                        <td></td>
+
+                        <td></td>
+
+                        <td> </td>
+
+                        <td></td>
+
+                        <td style="text-align:center;"><button><span class="table-remove glyphicon glyphicon-remove" style="color: #700;cursor: pointer"></span></button></td>
+
+                </tr>
+
+                </form>
+
+                </c:forEach>
+
+        </table>
+
+
+    </div>
+    </div>
+  </div>
+
+<script>
+
+</script>
+
+</body>
+</html>
